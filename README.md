@@ -1,11 +1,67 @@
+# React
+
+## State
+  1. State updates may be asynch...
+    **PreviousState**
+      ```js
+      this.setState((prevState, props) => {
+        counter: prevState.counter + props.increment,
+      });    
+      ```
+  2. State updates are merged     
+
+## React DOM
+  - Only re-renders the specific part of an Element that changes
+
+## Elements
+  - Immutable. Cannot change its children or attributes
+  - User-defined components `<Modal name="Shannon"/>`
+
+## ES6  
+  - **Classes**
+    - special _functions_
+      - Two components
+      1. Expressions
+        ```js
+        // unnamed
+        var Polygon = class {
+          constructor(height, width) {
+            this.height = height;
+            this.width = width;
+          }
+        };
+
+        // named
+        var Polygon = class Polygon {
+          constructor(height, width) {
+            this.height = height;
+            this.width = width;
+          }
+        };        
+        ```
+      2. Declarations
+        - NOT hoisted (unlike functions)
+        ```js
+        class Polygon {
+          constructor(height, width) {
+            this.height = height;
+            this.width = width;
+          }
+        }
+
+        ```
+    - prototype-based inheritance
+    - `constructor()` method creates and initializes an object created with a class
+  **Super(props)**
+    - Used to call functions on an object's parent
+    - `super.functionOnParent([arguments]);`
+    - ex: `super.hideModal(username, password);`
+
+
 # Basic Build with NPM scripts
 This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
 
 ## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `docs` directory for deployable code via gh-pages
 - es2015 and babel, including module syntax
 - mocha test runner
 - sass (.scss)
